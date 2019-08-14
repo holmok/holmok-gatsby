@@ -1,0 +1,40 @@
+@import "./normalize";
+@import "./skeleton";
+@import "./header-footer";
+
+html {
+  position: relative;
+  min-height: 100%;
+  overflow-y: scroll;
+}
+body {
+  margin-bottom: 6rem;
+  margin-top: 6rem;
+}
+a {
+  color: darkred;
+  &:hover{
+    color: red;
+  }
+}
+article.post {
+  p {
+    margin: 0;
+  }
+  h4 {
+    font-weight: 100;
+    margin: 0;
+  }
+  small{
+    display: block;
+    margin-bottom: 1rem;
+    color:gray;
+  }
+}
+
+div.readmore {
+  margin-bottom: 3rem;
+  margin-top: 1rem;
+}
+
+
