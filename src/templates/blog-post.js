@@ -15,8 +15,8 @@ class BlogPostTemplate extends React.Component {
           title={post.frontmatter.title}
           description={post.frontmatter.description || post.excerpt}
         />
-        <div class='row'>
-          <div class='offset-by-one ten columns '>
+        <div className='row'>
+          <div className='offset-by-one ten columns '>
             <article>
               <header>
                 <h1>

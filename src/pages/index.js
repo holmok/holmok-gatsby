@@ -13,8 +13,8 @@ class BlogIndex extends React.Component {
     return (
       <Layout location={this.props.location} title={siteTitle}>
         <SEO title='BLOG' />
-        <div class='row'>
-          <div class='offset-by-one ten columns '>
+        <div className='row'>
+          <div className='offset-by-one ten columns '>
             {posts.map(({ node }) => {
               const title = node.frontmatter.title || node.fields.slug
               return (
