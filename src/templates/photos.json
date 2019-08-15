@@ -1,0 +1,26 @@
+{
+    "samples/photo-1.jpg": {
+        "width": 11,
+        "height": 8
+    },
+    "samples/photo-2.jpg": {
+        "width": 1600,
+        "height": 1067
+    },
+    "samples/photo-3.jpg": {
+        "width": 1600,
+        "height": 1067
+    },
+    "samples/photo-4.jpg": {
+        "width": 1067,
+        "height": 1600
+    },
+    "samples/photo-5.jpg": {
+        "width": 1600,
+        "height": 1067
+    },
+    "samples/photo-6.jpg": {
+        "width": 1,
+        "height": 1
+    }
+}

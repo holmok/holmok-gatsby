@@ -8,8 +8,8 @@ class Layout extends React.Component {
     return (
       <div>
         <Header />
-        <div class='content'>
-          <div class='container'>
+        <div className='content'>
+          <div className='container'>
             {children}
           </div>
         </div>

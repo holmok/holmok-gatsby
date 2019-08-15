@@ -9,9 +9,7 @@ class Header extends React.Component {
             <Link to='/'>HOLMOK</Link>
           </div>
           <div className='menu u-pull-right'>
-            <Link to='/'>BLOG</Link>
-            {` `}/{` `}
-            <Link to='/photos'>PHOTOS</Link>
+            <Link to='/'>HOME</Link>
             {` `}/{` `}
             <Link to='/about'>ABOUT</Link>
           </div>

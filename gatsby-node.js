@@ -5,6 +5,7 @@ exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
 
   const blogPost = path.resolve(`./src/templates/blog-post.js`)
+  const photoPage = path.resolve(`./src/templates/photo-page.js`)
   const result = await graphql(
     `
       {
@@ -14,6 +15,11 @@ exports.createPages = async ({ graphql, actions }) => {
         ) {
           edges {
             node {
+              parent {
+                ... on File {
+                  sourceInstanceName
+                }
+              }
               fields {
                 slug
               }
@@ -37,15 +43,14 @@ exports.createPages = async ({ graphql, actions }) => {
   posts.forEach((post, index) => {
     const previous = index === posts.length - 1 ? null : posts[index + 1].node
     const next = index === 0 ? null : posts[index - 1].node
-
     createPage({
       path: post.node.fields.slug,
-      component: blogPost,
+      component: post.node.parent.sourceInstanceName === 'blog' ? blogPost : photoPage,
       context: {
         slug: post.node.fields.slug,
         previous,
-        next,
-      },
+        next
+      }
     })
   })
 }
@@ -58,7 +63,7 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
     createNodeField({
       name: `slug`,
       node,
-      value,
+      value
     })
   }
 }
