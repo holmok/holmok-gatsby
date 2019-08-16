@@ -13,33 +13,29 @@ class BlogIndex extends React.Component {
     return (
       <Layout location={this.props.location} title={siteTitle}>
         <SEO title='BLOG' />
-        <div className='row'>
-          <div className='offset-by-one ten columns '>
-            {posts.map(({ node }) => {
-              const title = node.frontmatter.title || node.fields.slug
-              return (
-                <article key={node.fields.slug} className='post'>
-                  <header>
-                    <h4>
-                      {title}
-                    </h4>
-                    <small>{node.frontmatter.date}</small>
-                  </header>
-                  <section>
-                    <p
-                      dangerouslySetInnerHTML={{
-                        __html: node.frontmatter.description || node.excerpt
-                      }}
-                    />
-                  </section>
-                  <div className='readmore'>
-                    <Link to={node.fields.slug}>Read more...</Link>
-                  </div>
-                </article>
-              )
-            })}
-          </div>
-        </div>
+        {posts.map(({ node }) => {
+          const title = node.frontmatter.title || node.fields.slug
+          return (
+            <article key={node.fields.slug} className='post'>
+              <header>
+                <h4>
+                  {title}
+                </h4>
+                <small>{node.frontmatter.date}</small>
+              </header>
+              <section>
+                <p
+                  dangerouslySetInnerHTML={{
+                    __html: node.frontmatter.description || node.excerpt
+                  }}
+                />
+              </section>
+              <div className='readmore'>
+                <Link to={node.fields.slug}>Read more...</Link>
+              </div>
+            </article>
+          )
+        })}
       </Layout>
     )
   }

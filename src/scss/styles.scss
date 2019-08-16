@@ -13,8 +13,24 @@ body {
 }
 a {
   color: darkred;
-  &:hover{
+  &:hover {
     color: red;
+  }
+}
+.sidebar {
+  margin-top: .5rem;
+  text-align: center;
+  h1 {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-size: 2.3rem;
+    font-weight: 100;
+    padding: 0.5rem;
+  }
+  .gatsby-image-wrapper {
+    img {
+      border-radius: 50%;
+    }
   }
 }
 article.post {
@@ -25,7 +41,7 @@ article.post {
     font-weight: 100;
     margin: 0;
   }
-  small{
+  small {
     display: block;
     margin-bottom: 1rem;
   }
@@ -35,5 +51,3 @@ div.readmore {
   margin-bottom: 3rem;
   margin-top: 1rem;
 }
-
-

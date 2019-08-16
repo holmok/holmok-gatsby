@@ -1,6 +1,7 @@
 import React from 'react'
 import '../scss/styles.scss'
 import Header from './header'
+import Sidebar from './sidebar'
 
 class Layout extends React.Component {
   render () {
@@ -10,7 +11,14 @@ class Layout extends React.Component {
         <Header />
         <div className='content'>
           <div className='container'>
-            {children}
+            <div className='row'>
+              <div className='nine columns'>
+                {children}
+              </div>
+              <div className='three columns'>
+                <Sidebar />
+              </div>
+            </div>
           </div>
         </div>
         <footer className='page'>

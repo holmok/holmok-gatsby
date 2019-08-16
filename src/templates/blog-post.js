@@ -15,34 +15,30 @@ class BlogPostTemplate extends React.Component {
           title={post.frontmatter.title}
           description={post.frontmatter.description || post.excerpt}
         />
-        <div className='row'>
-          <div className='offset-by-one ten columns '>
-            <article>
-              <header>
-                <h1>
-                  {post.frontmatter.title}
-                </h1>
-                <p>
-                  {post.frontmatter.date}
-                </p>
-              </header>
-              <section dangerouslySetInnerHTML={{ __html: post.html }} />
-            </article>
-            <nav>
-              {previous && (
-              <>&laquo; <Link to={previous.fields.slug} rel='prev'>
-                {previous.frontmatter.title}
-              </Link></>
-              )}
-              {next && previous && (<>{` `} / {` `}</>)}
-              {next && (
-              <><Link to={next.fields.slug} rel='next'>
-                {next.frontmatter.title}
-              </Link> &raquo;</>
-              )}
-            </nav>
-          </div>
-        </div>
+        <article>
+          <header>
+            <h1>
+              {post.frontmatter.title}
+            </h1>
+            <p>
+              {post.frontmatter.date}
+            </p>
+          </header>
+          <section dangerouslySetInnerHTML={{ __html: post.html }} />
+        </article>
+        <nav>
+          {previous && (
+          <>&laquo; <Link to={previous.fields.slug} rel='prev'>
+            {previous.frontmatter.title}
+          </Link></>
+          )}
+          {next && previous && (<>{` `} / {` `}</>)}
+          {next && (
+          <><Link to={next.fields.slug} rel='next'>
+            {next.frontmatter.title}
+          </Link> &raquo;</>
+          )}
+        </nav>
       </Layout>
     )
   }
